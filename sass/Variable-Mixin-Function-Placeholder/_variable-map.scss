@@ -1,0 +1,126 @@
+
+
+// Start code here 
+
+
+
+// --- Font --- 
+
+
+// -- Base Font -- 
+
+
+$base__font-size: 16px;
+$base__line-height: 24px;
+
+
+// -- Font Family --
+
+
+$font-family--primary: 'Nunito Sans',-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI','Roboto','Helvetica Neue', Arial, sans-serif;
+$font-family--secondary: 'Nunito Sans',-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI','Roboto','Helvetica Neue', Arial, sans-serif;
+$font-family--tertiary: // Safari for OS X and iOS (San Francisco)
+                        -apple-system,
+                        // Chrome >= 56 for OS X (San Francisco), Windows, Linux and Android
+                        system-ui,
+                        // Chrome < 56 for OS X (San Francisco)
+                        BlinkMacSystemFont,
+                        // Windows
+                        'Segoe UI',
+                        // Android
+                        'Roboto',
+                        // Basic web fallback
+                        'Helvetica Neue', Arial, sans-serif; // In case, second family becomes another typeface (for dual typeface web page)
+$font-family--print: Georgia,Cambria,'Times New Roman',Times,serif; 
+
+
+// -- Font Weights --
+
+
+$font-weight--light: 300;
+$font-weight--regular: 400;
+$font-weight--medium: 500;
+$font-weight--bold: 700;
+$font-weight--black: 900;
+
+
+// --- Colors --- 
+
+
+// -- Descriptive Base Colors -- 
+
+// - Black and White - 
+
+
+$white: #fff;
+$black: #000;
+$grey: #ddd;
+
+
+// - Colorful - 
+
+// Color naming: http://chir.ag/projects/name-that-color 
+
+
+$cornflower-blue: #487ff3;
+$sunshade: #ffad33;
+
+
+// -- Color Usage -- 
+
+
+$first: $cornflower-blue;
+$second: $sunshade;
+$color-shadow: rgba($black, .08);
+
+
+
+// --- Color Maps --- 
+
+
+// -- Simple Color Map Palette -- 
+
+// Connected to bg-color() mixin, we can generate additional classes with it
+
+
+/*$ui-colors: ( 
+  default: $aqua,
+  success: $spring-green,
+  error: $gold,
+  warning: $magenta,
+  info: $blue ); */
+
+
+// -- All Color Palettes -- 
+
+// Conected to palette() function, through which we call colors 
+
+/* To ease front end */
+// first: blue
+// second: orange
+
+
+$palettes: (
+  whites: (
+    base: $white
+  ),
+  greys: (
+    base: $grey
+  ),
+  blacks: (
+    x-light: change_color($black, $saturation: 3%, $lightness: 50%),
+    base: $black
+  ),
+  first: (
+    base: $first
+  ),
+  second: (
+    base: $second
+  )
+);
+
+
+// --- Transitions --- 
+
+
+$tr: cubic-bezier(0.77, 0, 0.175, 1);

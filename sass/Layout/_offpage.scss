@@ -1,0 +1,200 @@
+
+
+// Start code here
+
+
+// Offpage
+.offpage {
+  display: none;
+  position: relative;
+  background: #fff;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  z-index: 300;
+  opacity: 0;
+  transition: width .5s, transform .5s, display 0s 0s;
+  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  animation: fadeIn .5s forwards;
+
+  @media only screen and (min-width: 1200px) {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    width: calc(100% - 150px);
+    transform: translateX(100%);
+    box-shadow: -1px 0 0 rgba(0,0,0,.08); }}
+
+.offpage-active .offpage {
+  display: block;
+  transition: width .5s, transform .5s, display 0s 0s;
+  
+  @media only screen and (min-width: 1200px) {
+    transform: translateX(0%); }}
+
+.offpage--half .offpage {
+  @media only screen and (min-width: 1200px) {
+    width: 50%;
+    transition: width .5s, transform .5s, display 0s 0s; }}
+
+.offpage__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  z-index: 410;
+
+  @media only screen and (min-width: 1200px) {
+    position: relative;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.08); }}
+
+.offpage__body {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  background: #fff; 
+
+  @media only screen and (min-width: 1200px) {
+    position: relative;
+    min-height: unset;
+    height: calc(100% - 60px);
+    overflow: hidden; }}
+
+.offpage__body--loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1; }
+
+.offpage__content {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 100px 30px 145px 30px;
+  z-index: 2;
+
+  @media only screen and (min-width: 1200px) {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 60px 30px 145px 30px; }}
+    
+.about-page, .contact-page {
+  display: none;
+  opacity: 0;
+  animation: fadeIn .5s forwards;
+
+  @media only screen and (min-width: 1200px) {
+    opacity: 1;
+    animation: fadeIn .5s; }}
+
+.page-box {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #fff; }
+  
+.close {
+  position: relative;
+  
+  & span {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    left: 0;
+    right: 0; }
+  
+  & span:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 1px;
+    background: #333;
+    left: 50%;
+    top: calc(50% + 1px);
+    transform: translate(-50%,-50%) rotate(-45deg);
+    transform-origin: 0 50%; }
+
+  & span:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 1px;
+    background: #333;
+    left: 50%;
+    top: calc(50% + 1px);
+    transform: translate(-50%,-50%) rotate(45deg);
+    transform-origin: 0 50%; }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: #000;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transform-origin: center;
+    transition: opacity .3s; }
+  &:active {
+    &:before {
+      opacity: .05; 
+      
+      @media only screen and (min-width: 1200px) {
+      opacity: 0; }}}}
+
+.close-mob {
+  display: none;
+  height: 100%;
+  opacity: 0;
+  width: 60px; 
+
+  @media only screen and (min-width: 1200px) {
+    display: none !important; }}
+
+.offpage-active .close-mob {
+  display: inline-block;
+  animation: fadeIn .3s 0s forwards; }
+
+.close-desk {
+  display: none;
+  height: 100%;
+  opacity: 0;
+  width: 60px; }
+
+.close.close-desk {
+  transform: rotate(180deg); }
+
+.offpage-active .close-desk {
+  @media only screen and (min-width: 1200px) {
+    display: inline-block;
+    animation: fadeIn .3s .3s forwards; }}
+
+.close-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  cursor: url('../img/svg/cursor.svg'), auto; }
